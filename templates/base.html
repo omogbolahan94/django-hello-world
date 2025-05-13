@@ -1,7 +1,20 @@
-<!-->
+<!--
 The real power of templates is their ability to be extended. If you think about most websites,
 there is content that is repeated on every page (header, footer, etc). Wouldn’t it be nice if we,
 as developers, could have one canonical place for our header code that would be inherited by all
 other templates?
+
+This base.html file contains a header with links to our two pages (home and about page). 
+
+We can use the built-in url template tag which takes the URL pattern name as an argument
+to add URL links in our project.
 -->
 
+<header>
+    <a href="{% url 'home' %}">Home</a> |
+    <a href="{% url 'about' %}">About</a>
+</header>
+
+<!-- Blocks can be overwritten by child templates via inheritance. -->
+{% block content %}
+{% endblock content %}
